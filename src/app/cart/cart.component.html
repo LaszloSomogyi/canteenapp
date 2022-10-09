@@ -1,0 +1,38 @@
+<div class="cart-item">
+  <table class="table table-borderless PItable">
+    <thead>
+      <tr>
+        <th scope="col">Termék:</th>
+        <th scope="col">Ára:</th>
+        <th scope="col">db:</th>
+        <th scope="col">Fizetendő:</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="cart-item">
+      <tr *ngFor="let cartitem of cartitems, let i=index">
+        <td>
+          <p name="product_name">{{cartitem.name}}</p>
+        </td>
+        <td>
+          <p name="product_name">{{cartitem.price}}</p>
+        </td>
+        <td>
+          <div class="form-group mb-0">
+            <input type="number" class="form-control selectedPI" name="piQty1" id="qty" value="1" min="1"
+              [(ngModel)]="purchaseitem.qty" value="{{ purchaseitem.qty }}" formControlName="field{{i}}" />
+          </div>
+        </td>
+        <td>
+          <p name="product_price">{{cartitem.price * purchaseitem.qty}} </p>
+        </td>
+
+        <td>
+          <button name="row_deletion" id="row_deletion" type="button" class="btn btn-danger my-1 form-button">Sor
+            törlése</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

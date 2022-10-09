@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "qty": 3,
+        "product": {
+            "id": 1,
+            "name": "zsemle",
+            "price": 35
+        },
+        "purchase": {
+            "id": 1,
+            "client": {
+                "id": 1,
+                "name": "Ede"
+            },
+            "purchase_date": "2022-08-16T07:46:36.611Z"
+        }
+    },
+    {
+        "id": 2,
+        "qty": 2,
+        "product": {
+            "id": 2,
+            "name": "kifli",
+            "price": 40
+        },
+        "purchase": {
+            "id": 2,
+            "client": {
+                "id": 2,
+                "name": "Aba"
+            },
+            "purchase_date": "2022-08-19T08:56:36.611Z"
+        }
+    },
+    {
+        "id": 3,
+        "qty": 4,
+        "product": {
+            "id": 1,
+            "name": "zsemle",
+            "price": 35
+        },
+        "purchase": {
+            "id": 2,
+            "client": {
+                "id": 2,
+                "name": "Aba"
+            },
+            "purchase_date": "2022-08-19T08:56:36.611Z"
+        }
+    },
+    {
+        "id": 4,
+        "qty": 1,
+        "product": {
+            "id": 1,
+            "name": "zsemle",
+            "price": 35
+        },
+        "purchase": {
+            "id": 4,
+            "client": {
+                "id": 3,
+                "name": "Huba"
+            },
+            "purchase_date": "2022-09-21T07:34:36.611Z"
+        }
+    },
+    {
+        "id": 5,
+        "qty": 4,
+        "product": {
+            "id": 1,
+            "name": "zsemle",
+            "price": 35
+        },
+        "purchase": {
+            "id": 3,
+            "client": {
+                "id": 2,
+                "name": "Aba"
+            },
+            "purchase_date": "2022-08-27T09:26:36.611Z"
+        }
+    },
+    {
+        "id": 3,
+        "qty": 4,
+        "product": {
+            "id": 4,
+            "name": "tejföl",
+            "price": 150
+        },
+        "purchase": {
+            "id": 43,
+            "client": {
+                "id": 2,
+                "name": "Aba"
+            },
+            "purchase_date": "2022-08-27T09:26:36.611Z"
+        }
+    }
+]

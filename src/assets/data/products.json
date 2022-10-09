@@ -1,0 +1,8 @@
+[
+    {"id": 1, "name": "zsemle", "price": 35 },
+    {"id": 2, "name": "kifli", "price": 40 },
+    {"id": 3, "name": "vaj", "price": 300 },
+    {"id": 4, "name": "tejföl", "price": 150 },
+    {"id": 5, "name": "parizer", "price": 450 },
+    {"id": 6, "name": "Népsport", "price": 250 }
+]

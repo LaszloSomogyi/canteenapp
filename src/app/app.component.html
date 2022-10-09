@@ -1,76 +1,57 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
 <div class="container">
   <div class="contentbar">
-    <!-- Start row -->
     <div class="row">
-      <!-- Start col -->
       <div class="col-md-12 col-lg-12 col-xl-12">
+
         <div class="card m-b-30">
-          <div class="card-header">
-          <div *ngFor="let client of clients">
-            {{"Dumammmm" + client.name}}, {{client.id}}
-        </div>
-          </div>
-          <div class="card-body">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 col-xl-12">
-                <div class="cart-container">
-                  <div class="cart-head">
-                    <div class="table-responsive">
-                      <table class="table table-borderless">
-                        <thead>
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Termék:</th>
-                            <th scope="col">Ára:</th>
-                            <th scope="col">db:</th>
-                            <th scope="col">Fizetendő:</th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>
-                              <select name="select_product" placeholder="Enter full name"> 
-                                <option value="" disabled selected>Válassz terméket!</option>
-                               </select>                     
-                            </td>
-                            <td>
-                              <p name="product_price">Ár betöltés</p>
-                            </td>
-                            <td>
-                              <div class="form-group mb-0">
-                                <input type="number" class="form-control cart-qty" name="cartQty1" id="cartQty1"
-                                  value="1">
-                              </div>
-                            </td>
-                            <td>
-                              <div class="form-group mb-0">
-                                <input type="number" class="form-control cart-qty" name="purchaseItemSumprice1" id="purchaseItemSumprice1"
-                                  value="1">
-                              </div>
-                            </td>
-                            <td>
-                              <button name="row_deletion" id="row_deletion">Sor törlése</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="cart-footer text-right">
-                    <button type="button" class="btn btn-info my-1"><i class="ri-save-line mr-2"></i>Sor hozzáadása</button>
-                    <button type="button" class="btn btn-info my-1"><i class="ri-save-line mr-2"></i>Rendelés leadása</button>
-                  </div>
-                </div>
+          <div class="col-md-3 col-lg-3 col-xl-3">
+            <div class="login-container">
+              <div>
+                Kérjük, jelentkezz be!
+              </div>
+              <div>
+                <select name="currentClient" [(ngModel)]="currentClient">
+                  <option default [ngValue]="null">Jelentkezz be itt!</option>
+                  <option *ngFor="let client of clients" [ngValue]="client">{{client?.name}}</option>
+                </select>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End col -->
     </div>
-    <!-- End row -->
+  </div>
+  <div>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Név </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Ár </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button (click)="addToCart(element)">Kosárba</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <div>
+    <h3>Kosár</h3>
+    <app-cart [cartItem]="product">
+    </app-cart>
   </div>
 </div>

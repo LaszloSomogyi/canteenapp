@@ -1,6 +1,9 @@
+import { Product } from "../product/product";
+import { Purchase } from "../purchase/purchase";
+
 export interface PurchaseItem {
     id: number;
-    order_id: number;
-    product_id: number;
     qty: number;
+    product: Product;
+    purchase: Purchase;
 }

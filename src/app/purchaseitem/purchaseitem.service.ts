@@ -13,7 +13,7 @@ export class PurchaseItemService {
   constructor(private http: HttpClient) { }
 
   public getPurchaseItems(): Observable<PurchaseItem[]> {
-    return this.http.get<any>('${this.apiServerUrl}/Purchaseitems/all');
+    return this.http.get<any>('${this.apiServerUrl}/purchaseitem/all');
   }
 
   public addPurchaseItem(Purchaseitem: PurchaseItem): Observable<PurchaseItem> {
